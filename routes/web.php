@@ -13,10 +13,18 @@
 
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return "Welcome to this wonderfull api";//$router->app->version();
 });
 
 $router->group(['prefix' => 'api'], function () use ($router)
 {
+    //match /api/register
     $router->post('register', 'AuthController@register');
+
+    //match /api/login
+    $router->post('login', 'AuthController@login');
+
+    //match /api/profile
+    $router->get('profile', 'UserController@profile');
 });
+
