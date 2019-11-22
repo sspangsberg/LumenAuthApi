@@ -26,5 +26,14 @@ $router->group(['prefix' => 'api'], function () use ($router)
 
     //match /api/profile
     $router->get('profile', 'UserController@profile');
+
+    //match /api/users
+    $router->get('users', 'UserController@allUsers');
+
+    //match /api/user
+    $router->get('users/{id}', 'UserController@singleUser');
+
+
+
 });
 
